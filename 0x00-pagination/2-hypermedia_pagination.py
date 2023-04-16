@@ -4,7 +4,7 @@ Hypermedia pagination
 """
 
 
-from typing import Tuple, List, Dict
+from typing import Tuple, List
 import csv
 import math
 
@@ -64,12 +64,12 @@ class Server:
         """
         page_content = self.get_page(page, page_size)
         data = self.dataset()
-        total_pages = ((len(data) - 1) / page_size) + 1
+        total_pages = ((len(data) - 1) // page_size) + 1
         return {
                 "page_size": len(page_content),
                 "page": page,
                 "data": page_content,
                 "next_page": None if page >= total_pages else page + 1,
                 "prev_page": None if page - 1 == 0 else page - 1,
-                "total_pages": math.floor(total_pages)
+                "total_pages": total_pages
                 }
