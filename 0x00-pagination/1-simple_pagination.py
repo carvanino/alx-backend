@@ -49,9 +49,15 @@ class Server:
             indexes = index_range(page, page_size)
             start, end = [index for index in indexes]
             data = self.dataset()
+            if end > len(data):
+                paged_data = []
+                return paged_data
             paged_data = []
             for content in range(start, end):
-                paged_data.append(data[content])
-        except IndexError:
-            paged_data.append([])
+                try:
+                    paged_data.append(data[content])
+                except IndexError:
+                    pass
+        except Exception:
+            paged_data = []
         return paged_data
