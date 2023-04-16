@@ -57,7 +57,7 @@ class Server:
             paged_data = []
         return paged_data
 
-    def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict:
+    def get_hyper(self, page: int = 1, page_size: int = 10) -> dict:
         """
         Returns a dictionary containing; page_size, page, data,
         next_page, prev_page, and total_pages
