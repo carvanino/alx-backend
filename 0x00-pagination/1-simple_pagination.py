@@ -54,3 +54,4 @@ class Server:
                 paged_data.append(data[content])
         except IndexError:
             paged_data = []
+        return paged_data
