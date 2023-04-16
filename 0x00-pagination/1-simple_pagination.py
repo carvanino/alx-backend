@@ -48,7 +48,7 @@ class Server:
         try:
             indexes = index_range(page, page_size)
             start, end = [index for index in indexes]
-            data = Server.dataset(self)
+            data = self.dataset()
             paged_data = []
             for content in range(start, end):
                 paged_data.append(data[content])
