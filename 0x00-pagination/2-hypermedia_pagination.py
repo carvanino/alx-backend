@@ -4,7 +4,7 @@ Hypermedia pagination
 """
 
 
-from typing import Tuple, List
+from typing import Tuple, List, Dict
 import csv
 import math
 
@@ -57,7 +57,7 @@ class Server:
             paged_data = []
         return paged_data
 
-    def get_hyper(self, page: int = 1, page_size: int = 10) -> List[List]:
+    def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict:
         """
         Returns a dictionary containing; page_size, page, data,
         next_page, prev_page, and total_pages
