@@ -19,8 +19,9 @@ class BasicCache(BaseCaching):
         """
         Adds items to the cache_data dictionary
         """
-        if key or item:
+        if key and item:
             self.cache_data[key] = item
+        return
 
     def get(self, key):
         """
