@@ -31,7 +31,8 @@ class LIFOCache(BaseCaching):
             self.cache_data.pop(last_in)
         if key or item:
             self.cache_data[key] = item
-        return
+        else:
+            return
 
     def get(self, key):
         """
