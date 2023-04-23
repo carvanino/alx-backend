@@ -31,11 +31,12 @@ class LIFOCache(BaseCaching):
             self.cache_data.pop(last_in)
         if key or item:
             self.cache_data[key] = item
+        return
 
     def get(self, key):
-          """
-          Returns the value of key in cache_data
-          """
-          if key and key in self.cache_data.keys():
-              return self.cache_data.get(key)
-          return None
+        """
+        Returns the value of key in cache_data
+        """
+        if key and key in self.cache_data.keys():
+            return self.cache_data.get(key)
+        return None
