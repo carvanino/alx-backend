@@ -23,7 +23,7 @@ class MRUCache(BaseCaching):
         """
         Maintains a MRU caching system in cache_data
         """
-        if key or item:
+        if key and item:
             if key in self.items:
                 self.items.remove(key)
             self.items.append(key)
@@ -34,6 +34,7 @@ class MRUCache(BaseCaching):
             self.cache_data.pop(least)
             self.items.remove(least)
             print("DISCARD: {}".format(least))
+        return
 
     def get(self, key):
         """

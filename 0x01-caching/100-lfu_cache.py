@@ -40,9 +40,10 @@ class LFUCache(BaseCaching):
                 self.cache_data.pop(first_in)
                 print("DISCARD: {}".format(first_in))
 
-        if ((key or item) and (key not in self.cache_data.keys())):
+        if ((key and item) and (key not in self.cache_data.keys())):
             self.cache_data[key] = item
             self.track_freq[key] = 0
+        return
 
     def get(self, key):
         """
