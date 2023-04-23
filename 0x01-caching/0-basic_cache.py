@@ -11,9 +11,9 @@ class BasicCache(BaseCaching):
     Implements a basic caching system
     """
 
-    def __init__(self):
-        """ Instantiates class """
-        super().__init__()
+    # def __init__(self):
+    # """ Instantiates class """
+    # super().__init__()
 
     def put(self, key, item):
         """
