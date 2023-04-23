@@ -29,7 +29,7 @@ class LIFOCache(BaseCaching):
                 last_in = list(self.cache_data)[-1]
                 print("DISCARD: {}".format(last_in))
             self.cache_data.pop(last_in)
-        if key or item:
+        if key and item:
             self.cache_data[key] = item
         else:
             return
