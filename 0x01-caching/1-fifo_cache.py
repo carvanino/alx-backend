@@ -21,8 +21,10 @@ class FIFOCache(BaseCaching):
         """
         Maintains a FIFO caching system for cache_data
         """
-        if key or item:
+        if key and item:
             self.cache_data[key] = item
+        else:
+            return
         if len(self.cache_data) > BaseCaching.MAX_ITEMS:
             first_in = list(self.cache_data)[0]
             self.cache_data.pop(first_in)
