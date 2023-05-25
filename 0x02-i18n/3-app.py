@@ -18,8 +18,8 @@ class Config(object):
     """
 
     LANGUAGES = ["en", "fr"]
-    BABEL_default_locale = "en"
-    BABEL_default_timezone = "UTC"
+    BABEL_DEFAULT_LOCALE = "en"
+    BABEL_DEFAULT_TIMEZONE = "UTC"
 
 
 app.config.from_object(Config)
