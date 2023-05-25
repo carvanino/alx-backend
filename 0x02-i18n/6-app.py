@@ -1,4 +1,4 @@
-#!/urs/bin/env python3
+#!/usr/bin/env python3
 """
 Babel-Flask extension and setup
 Get locale from request
