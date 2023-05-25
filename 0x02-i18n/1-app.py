@@ -1,19 +1,11 @@
-#!/urs/bin/env python3
-"""
-Babel-Flask extension and setup
-"""
-
+#!/usr/bin/env python3
+"""Module: Flask and Babel App"""
 from flask import Flask, render_template
 from flask_babel import Babel
 
 
-
-
 class Config:
-    """
-    Configues available languages in our app
-    """
-
+    """App configurations"""
     LANGUAGES = ["en", "fr"]
     BABEL_DEFAULT_LOCALE = "en"
     BABEL_DEFAULT_TIMEZONE = "UTC"
@@ -21,16 +13,13 @@ class Config:
 
 app = Flask(__name__)
 app.config.from_object(Config)
-app.url_map.strict_slashes = False
-babel = Babel(app)
+babel = Babel(app=app)
 
 
 @app.route('/')
-def index_1():
-    """
-    Renders templates/1-index.html
-    """
-    return render_template('1-index.html')
+def index():
+    """Render index page"""
+    return render_template("1-index.html")
 
 
 if __name__ == "__main__":
