@@ -56,17 +56,20 @@ def get_user():
     login = request.args.get('login_as', '')
     if login:
         return users[int(login)]
-    else:
-        return None
+    return None
 
 
 @app.before_request
 def before_request():
     """
+    Runs before any function call
     """
+    g.user = get_user()
+    '''
     user = get_user()
     if user is not None:
         setattr(g, 'user', user)
+    '''
 
 
 @app.route('/')
