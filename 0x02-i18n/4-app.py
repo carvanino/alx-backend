@@ -1,4 +1,4 @@
-#!/urs/bin/env python3
+#!/usr/bin/env python3
 """
 Babel-Flask extension and setup
 Get locale from request
@@ -6,7 +6,7 @@ Parameterize Templates
 """
 
 from flask import Flask, render_template, request
-from flask_babel import Babel, _
+from flask_babel import Babel
 
 
 app = Flask(__name__)
