@@ -53,9 +53,10 @@ def get_user():
     """
     Returns a users dictionary or None
     """
-    login = request.args.get('login_as', '')
+    login = request.args.get('login_as')
     if login:
-        return users[int(login)]
+        return users.get(int(login))
+        # return users[int(login)]
     return None
 
 
