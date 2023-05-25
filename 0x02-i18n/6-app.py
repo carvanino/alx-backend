@@ -7,7 +7,7 @@ Mock logging in
 """
 
 from flask import Flask, render_template, request, g
-from flask_babel import Babel, _
+from flask_babel import Babel
 
 
 app = Flask(__name__)
@@ -47,7 +47,8 @@ def get_locale():
     if locale and locale in app.config['LANGUAGES']:
         return locale
     if g.user and g.user['locale'] in app.config['LANGUAGES']:
-        return g.user['locale']
+        return g.user.get('locale')
+        # return g.user['locale']
     locale = request.headers.get('locale', '')
     if locale and locale in app.config['LANGUAGES']:
         return locale
@@ -60,7 +61,8 @@ def get_user():
     """
     login = request.args.get('login_as')
     if login:
-        return users[int(login)]
+        return users.get(int(login))
+        # return users[int(login)]
     return None
 
 
